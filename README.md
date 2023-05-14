@@ -102,7 +102,7 @@ rm -rf wormholes
 rm -rf wormholes.sh
 rm -rf .wormholes
 ```
-# Snapshot
+# Snapshot (not working)
 ```
 systemctl stop wormholesd
 curl -o - -L https://wm.explorer.co.id/wmsnapshot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.wormholes/wormholes/
