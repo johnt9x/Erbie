@@ -8,11 +8,11 @@ https://www.wormholes.com/docs/install/run/docker/docker_3/index.html
 wget -O wormholes.sh https://raw.githubusercontent.com/quynhgianggithub/Wormholes/main/wormholes.sh && chmod +x wormholes.sh && ./wormholes.sh
 ```
 # Manual: 
-# update package
+# Update system and install build tools
 ```
 sudo apt update && sudo apt list --upgradable && sudo apt upgrade -y
 ```
-# Install library
+# Additional package:
 ```
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential git make ncdu net-tools -y
 ```
