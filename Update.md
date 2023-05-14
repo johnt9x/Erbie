@@ -1,4 +1,4 @@
-Guide update
+# Guide update
 ```
 sudo systemctl stop wormholesd
 cd && rm -rf wormholes
