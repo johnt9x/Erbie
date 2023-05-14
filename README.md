@@ -93,7 +93,7 @@ wormholes version
 ```
 cat .wormholes/wormholes/nodekey
 ```
-- Edit private key if you want move node (for new vps)
+- Edit private key (without 0x) if you want move node (for new vps)
 ```
 sudo nano .wormholes/wormholes/nodekey
 ```
