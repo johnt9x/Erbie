@@ -27,17 +27,13 @@ echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile &
 source $HOME/.bash_profile && \
 go version
 ```
-# Install binary
+# Install binary & build binary
 ```
 mkdir -p .wormholes/wormholes
 cd $HOME
 git clone https://github.com/wormholes-org/wormholes
 cd wormholes
 git checkout v0.13.1
-```
-# Build binary
-```
-cd wormholes
 go build -o wormholes cmd/wormholes/main.go
 mv wormholes /usr/local/bin
 ```
