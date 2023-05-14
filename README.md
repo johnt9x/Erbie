@@ -73,13 +73,21 @@ sudo systemctl enable wormholesd
 sudo systemctl start wormholesd
 ```
 # Commands
-check log
+Check log
 ```
 journalctl -fu wormholesd -o cat
 ```
-check version
+Check version
 ```
 wormholes version
+```
+Check private key
+```
+cat .wormholes/wormholes/nodekey
+```
+Edit private key if you your node to another vps
+```
+sudo nano .wormholes/wormholes/nodekey
 ```
 Remove node
 ```
