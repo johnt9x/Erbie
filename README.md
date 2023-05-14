@@ -39,9 +39,9 @@ cd wormholes
 go build -o wormholes cmd/wormholes/main.go
 mv wormholes /usr/local/bin
 ```
-# Create service
+# Create & start service
 ```
-tee /etc/systemd/system/wormholesd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/wormholesd.service > /dev/null <<EOF
 [Unit]
 Description=wormholes
 After=online.target
@@ -70,12 +70,9 @@ LimitNOFILE=4096
 [Install]
 WantedBy=multi-user.target
 EOF
-```
-# Start service
-```
 sudo systemctl daemon-reload
 sudo systemctl enable wormholesd
-sudo systemctl restart wormholesd
+sudo systemctl start wormholesd
 ```
 # Commands
 #check log
