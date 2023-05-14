@@ -73,15 +73,15 @@ sudo systemctl enable wormholesd
 sudo systemctl start wormholesd
 ```
 # Commands
-#check log
+check log
 ```
 journalctl -fu wormholesd -o cat
 ```
-#check version
+check version
 ```
 wormholes version
 ```
-#Remove node
+Remove node
 ```
 systemctl stop wormholesd
 systemctl disable wormholesd
