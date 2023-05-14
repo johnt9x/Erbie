@@ -1,5 +1,5 @@
 # WORMHOLES
-Guide wormholes official
+- Guide wormholes official
 
 https://www.wormholes.com/docs/install/run/docker/docker_3/index.html
 
@@ -77,23 +77,23 @@ sudo systemctl enable wormholesd
 sudo systemctl start wormholesd
 ```
 # Commands
-Check log
+- Check log
 ```
 journalctl -fu wormholesd -o cat
 ```
-Check version
+- Check version
 ```
 wormholes version
 ```
-Check private key
+- Check private key
 ```
-cat .wormholes/wormholes/nodekey
+- cat .wormholes/wormholes/nodekey
 ```
-Edit private key if you your node to another vps
+Edit private key if you want move node (for new vps)
 ```
-sudo nano .wormholes/wormholes/nodekey
+- sudo nano .wormholes/wormholes/nodekey
 ```
-Remove node
+- Remove node
 ```
 systemctl stop wormholesd
 systemctl disable wormholesd
@@ -108,7 +108,7 @@ systemctl stop wormholesd
 curl -o - -L https://wm.explorer.co.id/wmsnapshot.tar.lz4 | lz4 -c -d - | tar -x -C /wm/.wormholes/wormholes/
 sudo systemctl restart wormholesd && journalctl -fu wormholesd -o cat
 ```
-remove snaphot after restart your node
+- remove snaphot after restart your node
 ```
 rm -rf wmsnapshot.tar.lz4
 ```
