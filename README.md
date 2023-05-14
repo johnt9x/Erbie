@@ -1,11 +1,15 @@
 # WORMHOLES
-#Guide wormholes official
+Guide wormholes official
 
 https://www.wormholes.com/docs/install/run/docker/docker_3/index.html
 
 # Automatic:
 ```
 wget -O wormholes.sh https://raw.githubusercontent.com/quynhgianggithub/Wormholes/main/wormholes.sh && chmod +x wormholes.sh && ./wormholes.sh
+```
+# Monitoring:
+```
+wget -O monitor.sh https://raw.githubusercontent.com/quynhgianggithub/Wormholes/main/monitor.sh && chmod +x monitor.sh && ./monitor.sh
 ```
 # Manual: 
 # Update system and install build tools
