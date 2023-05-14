@@ -87,7 +87,7 @@ wormholes version
 ```
 - Check private key
 ```
-- cat .wormholes/wormholes/nodekey
+cat .wormholes/wormholes/nodekey
 ```
 Edit private key if you want move node (for new vps)
 ```
