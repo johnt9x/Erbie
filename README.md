@@ -106,7 +106,7 @@ rm -rf .wormholes
 ```
 systemctl stop wormholesd
 curl -o - -L https://wm.explorer.co.id/wmsnapshot.tar.lz4 | lz4 -c -d - | tar -x -C /wm/.wormholes/wormholes/
-sudo systemctl start wormholesd && journalctl -fu wormholesd -o cat
+sudo systemctl restart wormholesd && journalctl -fu wormholesd -o cat
 ```
 remove snaphot after restart your node
 ```
