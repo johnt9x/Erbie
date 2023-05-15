@@ -104,11 +104,11 @@ rm -rf .wormholes
 ```
 # Snapshot (not working)
 ```
-systemctl stop wormholesd
-curl -o - -L https://wm.explorer.co.id/wmsnapshot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.wormholes/wormholes/
+sudo systemctl stop wormholesd
+cp $HOME/.wormholes/wormholes/nodekey ./temp
+rm -rf $HOME/.wormholes/wormholes/*
+mkdir $HOME/.wormholes/wormholes/chaindata
+cat ./temp>$HOME/.wormholes/wormholes/nodekey
+curl -o - -L https://wm.explorer.co.id/wmsnapshot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.wormholes/wormholes/chaindata
 sudo systemctl restart wormholesd && journalctl -fu wormholesd -o cat
-```
-- remove snaphot after restart your node
-```
-rm -rf wmsnapshot.tar.lz4
 ```
