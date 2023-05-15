@@ -102,7 +102,7 @@ rm -rf wormholes
 rm -rf wormholes.sh
 rm -rf .wormholes
 ```
-# Snapshot (not working)
+# Snapshot
 ```
 sudo systemctl stop wormholesd
 cp $HOME/.wormholes/wormholes/nodekey ./temp
