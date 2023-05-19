@@ -4,7 +4,7 @@ sudo systemctl stop wormholesd
 cd && rm -rf wormholes
 git clone https://github.com/wormholes-org/wormholes
 cd wormholes
-git checkout v0.13.1
+git checkout v0.13.2
 go build -o wormholes cmd/wormholes/main.go
 mv wormholes /usr/local/bin
 sudo systemctl restart wormholesd
