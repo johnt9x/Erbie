@@ -9,7 +9,7 @@ wget -O wormholes.sh https://raw.githubusercontent.com/johnt9x/Wormholes/main/wo
 ```
 # Monitoring:
 ```
-wget -O monitor.sh https://raw.githubusercontent.com/quynhgianggithub/Wormholes/main/monitor.sh && chmod +x monitor.sh && ./monitor.sh
+wget -O monitor.sh https://raw.githubusercontent.com/johnt9x/Wormholes/main/monitor.sh && chmod +x monitor.sh && ./monitor.sh
 ```
 # Manual: 
 # Update system and install build tools
