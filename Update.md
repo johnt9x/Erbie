@@ -1,12 +1,12 @@
 # Guide update
 ```
-sudo systemctl stop wormholesd
-cd && rm -rf wormholes
-git clone https://github.com/wormholes-org/wormholes
-cd wormholes
+sudo systemctl stop erbied
+cd && rm -rf erbie
+git clone https://github.com/erbie-org/erbie
+cd erbie
 git checkout v0.13.2
-go build -o wormholes cmd/wormholes/main.go
-mv wormholes /usr/local/bin
-sudo systemctl restart wormholesd
-journalctl -fu wormholesd -o cat
+go build -o erbie cmd/erbie/main.go
+mv erbie /usr/local/bin
+sudo systemctl restart erbied
+journalctl -fu erbied -o cat
 ```
