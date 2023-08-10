@@ -20,9 +20,9 @@ go version
 
 #install binary
 cd $HOME
-git clone https://github.com/erbie-org/erbie
+git clone https://github.com/erbieio/erbie
 cd erbie
-git checkout v0.13.2
+git checkout v0.14.4
 sleep 5
 
 #build binary
