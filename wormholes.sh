@@ -1,6 +1,6 @@
 #!/bin/bash
 . ~/.bashrc
-mkdir -p .wormholes/wormholes
+mkdir -p .erbie/erbie
 
 #update package
 sudo apt update && sudo apt list --upgradable && sudo apt upgrade -y
@@ -20,27 +20,27 @@ go version
 
 #install binary
 cd $HOME
-git clone https://github.com/wormholes-org/wormholes
-cd wormholes
+git clone https://github.com/erbie-org/erbie
+cd erbie
 git checkout v0.13.2
 sleep 5
 
 #build binary
-cd wormholes
-go build -o wormholes cmd/wormholes/main.go
-mv wormholes /usr/local/bin
+cd erbie
+go build -o erbie cmd/erbie/main.go
+mv erbie /usr/local/bin
 
 #create service
-tee /etc/systemd/system/wormholesd.service > /dev/null <<EOF
+tee /etc/systemd/system/erbied.service > /dev/null <<EOF
 [Unit]
-Description=wormholes
+Description=erbie
 After=online.target
 [Service]
 Type=simple
 User=$USER
 WorkingDirectory=$HOME
-ExecStart= /usr/local/bin/wormholes \
-  --datadir $HOME/.wormholes \
+ExecStart= /usr/local/bin/erbie \
+  --datadir $HOME/.erbie \
   --devnet \
   --identity dwentz \
   --mine \
@@ -63,10 +63,10 @@ EOF
 
 #start service
 sudo systemctl daemon-reload
-sudo systemctl enable wormholesd
-sudo systemctl restart wormholesd
+sudo systemctl enable erbied
+sudo systemctl restart erbied
 
 sleep 10
 
-NODE_KEY=$(cat $HOME/.wormholes/wormholes/nodekey)
+NODE_KEY=$(cat $HOME/.erbie/erbie/nodekey)
 echo -e "Your privatekey: \e[32m$NODE_KEY\e[39m"
