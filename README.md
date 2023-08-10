@@ -100,7 +100,9 @@ systemctl disable wormholesd
 rm -rf root/usr/local/bin/wormholes
 rm -rf wormholes
 rm -rf wormholes.sh
+rm -rf monitor.sh
 rm -rf .wormholes
+
 ```
 # Snapshot (not working)
 ```
