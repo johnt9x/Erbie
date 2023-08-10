@@ -64,7 +64,7 @@ EOF
 #start service
 sudo systemctl daemon-reload
 sudo systemctl enable erbied
-sudo systemctl restart erbied
+sudo systemctl start erbied
 
 sleep 10
 
