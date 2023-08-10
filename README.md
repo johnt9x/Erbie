@@ -1,15 +1,15 @@
-# WORMHOLES
-- Guide wormholes official
+# erbie
+- Guide erbie official
 
-https://www.wormholes.com/docs/install/run/docker/docker_3/index.html
+https://www.erbie.com/docs/install/run/docker/docker_3/index.html
 
 # Automatic:
 ```
-wget -O wormholes.sh https://raw.githubusercontent.com/johnt9x/Wormholes/main/wormholes.sh && chmod +x wormholes.sh && ./wormholes.sh
+wget -O erbie.sh https://raw.githubusercontent.com/johnt9x/erbie/main/erbie.sh && chmod +x erbie.sh && ./erbie.sh
 ```
 # Monitoring:
 ```
-wget -O monitor.sh https://raw.githubusercontent.com/johnt9x/Wormholes/main/monitor.sh && chmod +x monitor.sh && ./monitor.sh
+wget -O monitor.sh https://raw.githubusercontent.com/johnt9x/erbie/main/monitor.sh && chmod +x monitor.sh && ./monitor.sh
 ```
 # Manual: 
 # Update system and install build tools
@@ -33,26 +33,26 @@ go version
 ```
 # Install binary & build binary
 ```
-mkdir -p .wormholes/wormholes
+mkdir -p .erbie/erbie
 cd $HOME
-git clone https://github.com/wormholes-org/wormholes
-cd wormholes
+git clone https://github.com/erbie-org/erbie
+cd erbie
 git checkout v0.13.2
-go build -o wormholes cmd/wormholes/main.go
-mv wormholes /usr/local/bin
+go build -o erbie cmd/erbie/main.go
+mv erbie /usr/local/bin
 ```
 # Create & start service
 ```
-sudo tee /etc/systemd/system/wormholesd.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/erbied.service > /dev/null <<EOF
 [Unit]
-Description=wormholes
+Description=erbie
 After=online.target
 [Service]
 Type=simple
 User=$USER
 WorkingDirectory=$HOME
-ExecStart= /usr/local/bin/wormholes \
-  --datadir $HOME/.wormholes \
+ExecStart= /usr/local/bin/erbie \
+  --datadir $HOME/.erbie \
   --devnet \
   --identity dwentz \
   --mine \
@@ -73,44 +73,44 @@ LimitNOFILE=4096
 WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable wormholesd
-sudo systemctl start wormholesd
+sudo systemctl enable erbied
+sudo systemctl start erbied
 ```
 # Commands
 - Check log
 ```
-journalctl -fu wormholesd -o cat
+journalctl -fu erbied -o cat
 ```
 - Check version
 ```
-wormholes version
+erbie version
 ```
 - Check private key
 ```
-cat .wormholes/wormholes/nodekey
+cat .erbie/erbie/nodekey
 ```
 - Edit private key (without 0x) if you want move node (for new vps)
 ```
-sudo nano .wormholes/wormholes/nodekey
+sudo nano .erbie/erbie/nodekey
 ```
 - Remove node
 ```
-systemctl stop wormholesd
-systemctl disable wormholesd
-rm -rf root/usr/local/bin/wormholes
-rm -rf wormholes
-rm -rf wormholes.sh
+systemctl stop erbied
+systemctl disable erbied
+rm -rf root/usr/local/bin/erbie
+rm -rf erbie
+rm -rf erbie.sh
 rm -rf monitor.sh
-rm -rf .wormholes
+rm -rf .erbie
 
 ```
 # Snapshot (not working)
 ```
-sudo systemctl stop wormholesd
-cp $HOME/.wormholes/wormholes/nodekey ./temp
-rm -rf $HOME/.wormholes/wormholes/*
-mkdir $HOME/.wormholes/wormholes/chaindata
-cat ./temp>$HOME/.wormholes/wormholes/nodekey
-curl -o - -L https://wm.explorer.co.id/wmsnapshot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.wormholes/wormholes/chaindata
-sudo systemctl restart wormholesd && journalctl -fu wormholesd -o cat
+sudo systemctl stop erbied
+cp $HOME/.erbie/erbie/nodekey ./temp
+rm -rf $HOME/.erbie/erbie/*
+mkdir $HOME/.erbie/erbie/chaindata
+cat ./temp>$HOME/.erbie/erbie/nodekey
+curl -o - -L https://wm.explorer.co.id/wmsnapshot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.erbie/erbie/chaindata
+sudo systemctl restart erbied && journalctl -fu erbied -o cat
 ```
