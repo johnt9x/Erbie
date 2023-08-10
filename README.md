@@ -1,7 +1,7 @@
-# erbie
+# Erbie
 - Guide erbie official
 
-https://www.erbie.com/docs/install/run/docker/docker_3/index.html
+https://www.erbie.io/docs/install/run/index.html
 
 # Automatic:
 ```
