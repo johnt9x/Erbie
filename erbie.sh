@@ -19,7 +19,7 @@ mkdir -p .erbie/erbie
 cd $HOME
 git clone https://github.com/erbieio/erbie
 cd erbie
-git checkout v0.14.4
+git checkout v0.14.5
 go build -o erbie cmd/erbie/main.go
 sudo mv erbie /usr/local/bin
 
