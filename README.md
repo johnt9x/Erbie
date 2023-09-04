@@ -104,13 +104,3 @@ rm -rf monitor.sh
 rm -rf .erbie
 
 ```
-# Snapshot (not working)
-```
-sudo systemctl stop erbied
-cp $HOME/.erbie/erbie/nodekey ./temp
-rm -rf $HOME/.erbie/erbie/*
-mkdir $HOME/.erbie/erbie/chaindata
-cat ./temp>$HOME/.erbie/erbie/nodekey
-curl -o - -L https://wm.explorer.co.id/wmsnapshot.tar.lz4 | lz4 -c -d - | tar -x -C $HOME/.erbie/erbie/chaindata
-sudo systemctl restart erbied && journalctl -fu erbied -o cat
-```
