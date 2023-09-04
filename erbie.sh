@@ -44,7 +44,7 @@ ExecStart=/usr/local/bin/erbie \
   --rpcvhosts "*" \
   --http \
   --rpcaddr 127.0.0.1 \
-  --rpcport 8544 \
+  --rpcport 8545 \
   --port 30303 \
   --maxpeers 50 \
   --syncmode full
