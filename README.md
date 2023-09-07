@@ -2,7 +2,7 @@
 - Guide erbie official
 
 https://www.erbie.io/docs/install/run/index.html
-
+Port: 30303,8544
 # Automatic:
 ```
 wget -O erbie.sh https://raw.githubusercontent.com/johnt9x/erbie/main/erbie.sh && chmod +x erbie.sh && ./erbie.sh
