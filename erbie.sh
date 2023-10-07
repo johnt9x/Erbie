@@ -36,7 +36,7 @@ WorkingDirectory=$HOME
 ExecStart=/usr/local/bin/erbie \
   --datadir $HOME/.erbie \
   --devnet \
-  --identity johnt9x \
+  --identity vnbnode \
   --mine \
   --miner.threads 1 \
   --rpc \
